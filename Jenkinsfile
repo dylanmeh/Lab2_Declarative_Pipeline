@@ -1,3 +1,4 @@
+@Library("sharedlib") _
 pipeline {
   agent {
     kubernetes {
@@ -22,6 +23,12 @@ pipeline {
         }
       }
     }
+    stage('testing shared library') {
+      steps {
+        container('maven') {
+          sharedlib(Dylan,Tuesday)
+        }
+      }
+    }  
   }
 }
-  
