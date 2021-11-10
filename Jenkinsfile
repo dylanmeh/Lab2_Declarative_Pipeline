@@ -1,4 +1,4 @@
-@Library("sharedlib") _
+@Library("buildResults") _
 pipeline {
   agent {
     kubernetes {
@@ -26,7 +26,7 @@ pipeline {
     stage('testing shared library') {
       steps {
         container('maven') {
-          sharedlib("Dylan","Tuesday")
+          buildResults()
         }
       }
     }  
