@@ -26,7 +26,7 @@ pipeline {
   }  
   post {
     success {
-      buildResults("Successful")
+      buildResultss("Successful")
     }
     
     failure {
