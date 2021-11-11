@@ -19,14 +19,14 @@ pipeline {
     stage('Maven build packaging and testing') {
       steps {
         container('maven') {
-          sh 'mvn clean package'
+          sh 'mvn cleanl package'
         }
       }
     }
   }  
   post {
     success {
-      buildResultss("Successful")
+      buildResults("Successful")
     }
     
     failure {
