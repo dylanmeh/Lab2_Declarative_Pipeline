@@ -23,12 +23,13 @@ pipeline {
         }
       }
     }
-    stage('testing shared library') {
-      steps {
-        container('maven') {
-          buildResults()
-        }
-      }
-    }  
+  post {
+    success {
+      buildResultsSuccess()
+    }
+    
+    failure {
+      buildResultsFailure()
+    }
   }
-}
+}    
