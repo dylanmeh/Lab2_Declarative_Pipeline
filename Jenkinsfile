@@ -1,5 +1,4 @@
 @Library("buildResultsSuccess") _
-@Library("buildResultsFailure") _
 pipeline {
   agent {
     kubernetes {
@@ -31,7 +30,12 @@ pipeline {
     }
     
     failure {
-      buildResultsFailure()
+      emailext (
+      subject: "FAILURE: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+      body: """FAILURE: Job '${JOB_NAME} [${BUILD_NUMBER}]':
+      Check console output at ${BUILD_URL}""",
+      to: 'dylan.mehmedovic@concanon.com'
+      )
     }
   }
 }    
