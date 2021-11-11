@@ -1,4 +1,5 @@
-@Library("buildResults") _
+@Library("buildResultsSuccess") _
+@Library("buildResultsFailure") _
 pipeline {
   agent {
     kubernetes {
