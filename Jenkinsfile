@@ -30,7 +30,7 @@ pipeline {
     }
     
     failure {
-      builtResults("Failure")
+      buildResults("Failure")
     }
   }
 }    
