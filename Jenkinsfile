@@ -17,7 +17,7 @@ pipeline {
   }
   
   triggers {
-        eventTrigger jmespathQuery("repository.full_name=='dylanmeh/Using_Webhook2'")
+        eventTrigger jmespathQuery("repository.full_name=='dylanmeh/Lab2_Declarative_Pipeline'")
   }
   
   stages {
