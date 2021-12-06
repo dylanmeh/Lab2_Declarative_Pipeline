@@ -15,6 +15,11 @@ pipeline {
         '''
     }
   }
+  
+  triggers {
+        eventTrigger jmespathQuery("repository.full_name=='dylanmeh/Using_Webhook2'")
+  }
+  
   stages {
     stage('Maven build packaging and testing') {
       steps {
