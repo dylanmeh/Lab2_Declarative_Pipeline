@@ -16,10 +16,6 @@ pipeline {
     }
   }
   
-  triggers {
-        eventTrigger jmespathQuery("repository.full_name=='dylanmeh/Lab2_Declarative_Pipeline'")
-    }
-  
   stages {
     stage('Maven build packaging and testing') {
       steps {
